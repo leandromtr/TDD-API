@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CloudCoustomers.API\CloudCoustomers.API.csproj" />
+  </ItemGroup>
+
 </Project>
