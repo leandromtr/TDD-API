@@ -7,6 +7,7 @@ using CloudCoustomers.API.Services;
 using CloudCoustomers.API.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using CloudCoustomers.UnitTests.Fixtures;
 
 namespace CloudCoustomers.UnitTests.System.Controllers;
 
@@ -18,19 +19,7 @@ public class TestUserController
         //Arrange   
         var mockUserService = new Mock<IUsersService>();
         mockUserService.Setup(service => service.GetAllUsers())
-            .ReturnsAsync(new List<User>(){
-            new () {
-                Id = 1,
-                Name = "Leandro",
-                Address = new Address()
-                {
-                    Street = "Rua, 123",
-                    City = "Bordeaux",
-                    ZipCode = "43600",
-                },
-                Email = "leandromtr@hotmail.com"
-                }
-            });
+            .ReturnsAsync(UsersFixture.GetTestUsers());
 
         var sut = new UsersController(mockUserService.Object);
         //Act
@@ -60,20 +49,7 @@ public class TestUserController
         //Arrange   
         var mockUserService = new Mock<IUsersService>();
         mockUserService.Setup(service => service.GetAllUsers())
-            .ReturnsAsync(new List<User>(){
-            new ()
-            {
-                Id = 1,
-                Name = "Leandro",
-                Address = new Address()
-                {
-                    Street = "Rua, 123",
-                    City = "Bordeaux",
-                    ZipCode = "43600",
-                },
-                Email = "leandromtr@hotmail.com"
-            }
-        });
+            .ReturnsAsync(UsersFixture.GetTestUsers());
 
         var sut = new UsersController(mockUserService.Object);
         //Act
