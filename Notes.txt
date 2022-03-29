@@ -1,0 +1,4 @@
+Project based at Building a .NET 6 API Using TDD
+https://www.youtube.com/watch?v=ULJ3UEezisw
+
+The tutorial isn't complete, it was stopped at 1h
